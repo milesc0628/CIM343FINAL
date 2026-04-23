@@ -43,8 +43,26 @@ const sequelize = new Sequelize({
   logging:false
 });
 
+const url = 'https://api.themoviedb.org/3/authentication';
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTk3YTQzMzVkODczNjI1Y2QzMDY0NjJjMWQ2N2JhOCIsIm5iZiI6MTc3NjgwODQxNy42NzgwMDAyLCJzdWIiOiI2OWU3ZjFlMTUwNzVhZGQxZDYxOTY2NjEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.9gqFEwhPxskcmks5eWdNs0uXrVxkGSRfD0fazzVNthY'
+  }
+};
+
+fetch(url, options)
+  .then(res => res.json())
+  .then(json => console.log(json))
+  .catch(err => console.error(err));
+
 app.get('/', function (req, res, next) {
   res.render('index', { title: 'hi' });
+});
+
+app.get('/movies', function (req, res, next) {
+  res.render('movies', { title: 'movie' });
 });
 
 // catch 404 and forward to error handler
