@@ -1,8 +1,51 @@
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: Courier, sans-serif;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    background-color: #032541;
 }
 
-a {
-  color: #00B7FF;
+nav > ul{
+    display:grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: end;
+    justify-items: end;
+    align-content: end;
+    align-items: end;
+  list-style: none;
+}
+
+.card {
+    background-color: #032541;
+}
+#movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+
+.movie_item {
+    margin: 1rem;
+    text-align: center;
+    color: rgb(24, 24, 24);
+    font-size: 25px;
+    max-width: 500px;
+    background-color: #b7c3cd;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    border-radius: 40px;
+}
+
+.title {
+    padding-top: 16px;
+}
+
+.movie_img_rounded {
+    border-radius: 3rem;
 }

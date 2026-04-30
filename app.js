@@ -69,6 +69,14 @@ app.get('/', function (req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
+app.get('/movies', function (req, res, next) {
+  res.render('movies', {title:'movies'});
+});
+
+app.get('/movies2', function (req, res, next) {
+  res.render('movies2', {title:'movies2'});
+});
+
 
 
 
