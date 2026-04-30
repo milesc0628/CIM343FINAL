@@ -1,10 +1,10 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
 body {
-    font-family: Courier, sans-serif;
+    font-family: Oxygen-Mono, monospace;
     text-align: center;
     color: white;
     font-size: 32px;
-    background-color: #032541;
+    background-color: #3a0404;
 }
 
 nav > ul{
@@ -17,10 +17,21 @@ nav > ul{
     align-items: end;
   list-style: none;
 }
-
-.card {
-    background-color: #032541;
+nav > ul > li > a{
+    text-decoration: none;
+    color: rgb(rgb(247, 221, 221), green, blue)
 }
+
+nav > ul > li > a:hover{
+    text-decoration: none;
+    color: rgb(rgb(247, 221, 221), green, blue)
+}
+
+nav > ul > li > a:visited{
+    text-decoration: none;
+    color: rgb(rgb(247, 221, 221), green, blue)
+}
+
 #movies {
     display: flex;
     flex-wrap: wrap;

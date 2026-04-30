@@ -69,12 +69,16 @@ app.get('/', function (req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
+app.get('/landing', function (req, res, next) {
+  res.render('landing', { title: 'Home' });
+});
+
 app.get('/movies', function (req, res, next) {
   res.render('movies', {title:'movies'});
 });
 
-app.get('/movies2', function (req, res, next) {
-  res.render('movies2', {title:'movies2'});
+app.get('/tv', function (req, res, next) {
+  res.render('tv', {title:'tv'});
 });
 
 
