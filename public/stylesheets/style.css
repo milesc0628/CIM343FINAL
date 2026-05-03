@@ -216,5 +216,17 @@ padding-left: 15%;
 padding-right: 15%;
 }
 
+#received{
+  display: grid;
+  grid-template-rows: 250px;
+    grid-template-columns: 1fr;
+    padding-right: 80px;
+}
+
+#received > p {
+  font-size: 50px;
+  text-align: justify;
+}
+
 
 

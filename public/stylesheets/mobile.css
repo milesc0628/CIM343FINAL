@@ -1,6 +1,57 @@
 #umihome{
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: 400px;
     grid-template-columns: 1fr;
     padding-right: 80px;
+}
+
+#received{
+  display: grid;
+  grid-template-rows: 250px;
+    grid-template-columns: 1fr;
+    padding-right: 80px;
+}
+
+img{
+  width: 450px;
+  height: auto;
+}
+
+nav > a > img{
+    padding-left: 20px;
+    padding-top: 15px;
+    width: 32px;
+    height: 32px;
+}
+#mailbutton{
+width: 200px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+
+.feedumi-form button {
+    font-size: 45px;
+}
+
+video{
+  width: 375px;
+  height: auto;
+}
+
+.form-group input,
+.form-group textarea {
+  font-size: 30px;
+}
+
+#about{
+padding-left: 5%;
+padding-right: 5%;
+}
+
+p{
+  font-size: 40px;
 }
