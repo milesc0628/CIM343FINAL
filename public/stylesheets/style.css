@@ -212,5 +212,10 @@ img{
             transform: translate(1px, 1px);
         }
 
+#about{
+padding-left: 15%;
+padding-right: 15%;
+}
+
 
 
