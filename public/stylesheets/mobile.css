@@ -1,20 +1,27 @@
+nav > a > img{
+  float: left;
+}
+
 #umihome{
-  display: grid;
-  grid-template-rows: 400px;
-    grid-template-columns: 1fr;
-    padding-right: 80px;
+  display:block;
+  padding-left: 10%;
+  padding-right: 10%;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  justify-content: center;
 }
 
 #received{
-  display: grid;
-  grid-template-rows: 250px;
-    grid-template-columns: 1fr;
-    padding-right: 80px;
+   display:block;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 img{
   width: 450px;
   height: auto;
+  float: none;
 }
 
 nav > a > img{
@@ -22,9 +29,6 @@ nav > a > img{
     padding-top: 15px;
     width: 32px;
     height: 32px;
-}
-#mailbutton{
-width: 200px;
 }
 
 .form-group label {
