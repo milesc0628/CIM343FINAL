@@ -1,4 +1,3 @@
-require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +7,11 @@ var hbs = require('hbs');//added
 const fs = require('fs');
 const { Sequelize } = require('sequelize');
 const { DataTypes } = require('sequelize');
+var dotenv = require('dotenv').config();
+
+const dbUrl = process.env.NODE_ENV === 'production'
+  ? process.env.DATABASE_URL_PROD
+  : process.env.DATABASE_URL_LOCAL;
 
 
 // var indexRouter = require('./routes/index');
@@ -40,7 +44,7 @@ const storage = path.join(dataDirectory, 'database.sqlite');
 //Ensure the data directory exists
 fs.mkdirSync(dataDirectory, { recursive: true });
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
+const sequelize = new Sequelize(dbUrl, {
    dialect: 'postgres', dialectOptions: {
      ssl: {
        require: true, rejectUnauthorized: false 
