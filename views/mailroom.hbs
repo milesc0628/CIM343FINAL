@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+
+<div class="posts-container">
+  {{#each posts}}
+  <div class="post-card">
+    <h2>{{this.name}}</h2>
+    <p>{{this.description}}</p>
+  </div>
+  {{/each}}
+</div>

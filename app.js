@@ -51,85 +51,45 @@ async function syncDB(){
 
 syncDB().catch(console.error);
 
-const List = sequelize.define('List', {
-  name: { type: DataTypes.STRING, allowNull: false },
-});
-
-const Task = sequelize.define('Task',{
+const Post = sequelize.define('Post',{
   name:{type: DataTypes.STRING,allowNull:false},
   description:{type: DataTypes.TEXT}
 });
-
-// 1. A List can contain multiple Tasks
-List.hasMany(Task, {
-  onDelete: 'CASCADE'   // If a List is deleted, delete its Tasks
-});
-
-// 2. A Task belongs to a single List
-Task.belongsTo(List);
-
-/* const url = 'https://api.themoviedb.org/3/authentication';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOTk3YTQzMzVkODczNjI1Y2QzMDY0NjJjMWQ2N2JhOCIsIm5iZiI6MTc3NjgwODQxNy42NzgwMDAyLCJzdWIiOiI2OWU3ZjFlMTUwNzVhZGQxZDYxOTY2NjEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.9gqFEwhPxskcmks5eWdNs0uXrVxkGSRfD0fazzVNthY'
-  }
-};
-
-fetch(url, options)
-  .then(res => res.json())
-  .then(json => console.log(json))
-  .catch(err => console.error(err)); */
 
 /* GET home page. */
  app.get('/', function (req, res, next) {
   res.render('index', { title: 'Home' });
 });
 
-/*app.get('/landing', function (req, res, next) {
-  res.render('landing', { title: 'Home' });
+app.get('/feedumi', function(req,res,next){
+  res.render('feedumi',{title:'Feeding Umi'});
 });
 
-app.get('/movies', function (req, res, next) {
-  res.render('movies', {title:'movies'});
-});
-
-app.get('/tv', function (req, res, next) {
-  res.render('tv', {title:'tv'});
-}); */
-
-app.get('/addtask',function(req,res,next){
-  res.render('addtask',{title:'Add Task'});
-});
-
-app.post('/addtask', async function(req,res,next){
+app.get('/mailroom', async function(req,res,next){
   try{
-    const created = await Task.create({name:req.body.name, description: req.body.description});
-    res.json(created);
+    const posts = await Post.findAll();
+    res.render('mailroom',{title:'Mailroom', posts: posts});
   }catch(err){
     next(err);
   }
 });
 
-app.get('/addlist', function (req, res, next) {
-  res.render('addlist', { title: 'Add List' });
+app.get('/mailreceived', function(req,res,next){
+  res.render('mailreceived',{title:'Mail Received!'});
 });
 
-app.post('/addlist', async function (req, res, next) {
-  console.log('Received addlist POST:', req.body);
-  try {
-        // req.body is now the clean JSON object
-        const list = await List.create(req.body, {
-            include: [Task]
-        });
-        res.json(list);
-    } catch (err) {
-        console.log(err);
-        res.status(500).json({ error: err.message });
-    }
+app.post('/feedumi', async function(req,res,next){
+  try{
+    const created = await Post.create({name:req.body.name, description: req.body.description});
+    res.redirect('/mailreceived');
+  }catch(err){
+    next(err);
+  }
 });
 
+app.get('/about', function(req,res,next){
+  res.render('about',{title:'About'});
+});
 
 
 module.exports = app;

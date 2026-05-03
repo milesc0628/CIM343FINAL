@@ -1,68 +1,216 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
-body {
-    font-family: Oxygen-Mono, monospace;
-    text-align: center;
-    color: white;
-    font-size: 32px;
-    background-color: #3a0404;
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Jersey+25&display=swap');
+nav{
+background: linear-gradient(90deg,rgba(10, 17, 145, 1) 0%, rgba(66, 157, 207, 1) 100%);
+   position: fixed;
+   top: 0px;
+   width: 100%;
+   left: 0px;
 }
 
-nav > ul{
+body {
+    font-family: "Jersey 15", sans-serif;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: #efe8ca;
+    justify-content:start;
+}
+
+nav > a > img{
+    padding-left: 20px;
+    padding-top: 15px;
+}
+ nav > ul{
     display:grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: end;
-    justify-items: end;
-    align-content: end;
-    align-items: end;
+    grid-template-columns: 100px 100px;
+    justify-content: start;
   list-style: none;
-}
-nav > ul > li > a{
-    text-decoration: none;
-    color: rgb(rgb(247, 221, 221), green, blue)
+  font-size: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
-nav > ul > li > a:hover{
-    text-decoration: none;
-    color: rgb(rgb(247, 221, 221), green, blue)
+nav > ul > li > a{
+  color: #FFFAFA;
+  text-decoration: none;
+
 }
 
 nav > ul > li > a:visited{
-    text-decoration: none;
-    color: rgb(rgb(247, 221, 221), green, blue)
+  color: #FFFAFA;
+  text-decoration: none;
+
 }
 
-#movies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+nav > ul > li > a:hover{
+   color: #e3ffeb;
+  text-decoration: none; 
+}
+
+h1{
+    font-size: 80px;
+    font-family: "Jersey 25", sans-serif;
+    padding-top: 80px;
+    font-weight: bold;
+    color:rgba(10, 17, 145, 1);
+}
+
+.feedumi-form {
+  background-color: rgb(206, 206, 206);
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  border: inset 2px;
+  
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #606060;
+  font-family: inherit;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.feedumi-form button {
+    font-family: "Jersey 15", sans-serif;
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            box-shadow: 1px 1px 0 #808080;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 6px;
+    font-size: 25px;
+    color:rgb(36, 78, 195);
+}
+
+.feedumi-form button:hover {
+            color:rgb(93, 136, 255);
+}
+
+.feedumi-form button:active {
+  border-top: 2px solid #000;
+            border-left:  2px solid #000;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            box-shadow: 1px 1px 0 #808080 inset;
+            transform: translate(1px, 1px);
+            color:rgb(9, 58, 193);
+}
+
+/* Posts Container & Cards */
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.post-card {
+  background-color: rgb(218, 218, 218);
+  border: outset 4px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-card h2 {
+  color: rgba(10, 17, 145, 1);
+  margin-top: 0;
+  font-size: 30px;
+}
+
+.post-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 25px;
+}
+
+p{
+    font-size: 25px;
+}
+
+a{
+    color:rgb(36, 78, 195);
+    font-size: 25px;
+    text-decoration: none;
+}
+
+a:hover{
+    color:rgb(93, 136, 255);
+    font-size: 25px;
+}
+a:active{
+    color:rgb(9, 58, 193);
     
 }
 
-.movie_item {
-    margin: 1rem;
-    text-align: center;
-    color: rgb(24, 24, 24);
-    font-size: 25px;
-    width: 500px;
-    background-color: #b7c3cd;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 20px;
-    border-radius: 40px;
-    transition: width 1s;
+#umihome{
+  display: grid;
+  grid-template-rows: 250px;
+    grid-template-columns: 1fr;
+    padding-right: 80px;
 }
 
-.movie_item:hover{
-    width: 600px;
-    padding: 20px;
-
-}
-.title {
-    padding-top: 16px;
+#umihome > p {
+  font-size: 50px;
+  text-align: justify;
 }
 
-.movie_img_rounded {
-    border-radius: 3rem;
+img{
+  float: left;
 }
+#mailbutton{
+  font-family: "Jersey 15", sans-serif;
+            background: #c0c0c0;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-right: 2px solid #000;
+            border-bottom: 2px solid #000;
+            box-shadow: 1px 1px 0 #808080;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+  width: 400px;
+    font-size: 50px;
+    margin-left: 25%;
+}
+
+#mailbutton:active{
+            border-top: 2px solid #000;
+            border-left: 2px solid #000;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            box-shadow: 1px 1px 0 #808080 inset;
+            transform: translate(1px, 1px);
+        }
+
+
+
