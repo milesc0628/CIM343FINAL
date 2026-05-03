@@ -56,6 +56,14 @@ padding-left: 5%;
 padding-right: 5%;
 }
 
+.post-card h2 {
+  font-size: 55px;
+}
+
+.post-card p {
+  font-size: 40px;
+}
+
 p{
   font-size: 40px;
 }
